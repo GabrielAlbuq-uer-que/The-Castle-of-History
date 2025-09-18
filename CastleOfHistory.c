@@ -10,7 +10,8 @@ void iniHistoria(int personagem);
 //part1
 void cena1();
     int personagemEscolhido;
-    void caminho1();
+    int escolha1;
+void caminho1();
         int escolha1;
         int escolha2;
         int escolher1(const char *pergunta, int opcoes);
@@ -185,9 +186,41 @@ void cena1(){
     }
     {
         if (personagemEscolhido==3){
-            
+            printf("Narrador: O Camponês Candy Drops sai de sua fazenda em direção ao castelo para ouvir o que o rei tem de tão urgente para anunciar. ")
+            printf("Rei: Aconteceu uma desgraça!! O Cupcake Real foi roubado. Sem ele não é possível acontecer o festival, pois ele simboliza toda a energia vital do meu reinado. Àquele que encontrar o Cupcake será concedido a honra de se casar com a princesa.\n");
+            int escolha1 = escolher1(
+                "1- Preciso aproveitar essa grande oportunidade de recompensa.\n2- Isso não é da minha conta e muito perigoso. Prefiro ficar fora dessa.\nEscolha: ",
+                2
+            );
+        }else if (escolha1==2)
+        {
+            printf("Narrador: Candy Drops decide não se envolver na busca pelo Cupcake Real, preferindo manter sua independência e evitar riscos desnecessários.\n");
+           printf("Entretanto, Candy Drops é contratado para resgatar o Cupcake Real, e vê nisso uma oportunidade de lucro.\n");
         }
+        else{
+            printf("Opção inválida. Tente novamente.\n");
+            cena1();
+        }
+        
     }
     
+    
+}
+void Caminho1(){
+    int escolha1;
+    int escolha2;
+    printf("O personagem segue em direção à ponte. Ao sair do castelo, encontra uma colher.");
+    escolha1 = escolher1(
+        "O que o personagem faz?\n1- Pega a colher.\n2- Ignora a colher e segue em frente.\nEscolha: ",
+        2
+    );
+    if (escolha1 == 1) {
+        printf("O personagem pega a colher, que pode ser útil mais tarde.\n");
+    } else if (escolha1 == 2) {
+        printf("O personagem decide não pegar a colher e continua seu caminho.\n");
+    } else {
+        printf("Opção inválida. Tente novamente.\n");
+        Caminho1();
+    }
     
 }
