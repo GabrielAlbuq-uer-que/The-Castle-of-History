@@ -234,6 +234,7 @@ void cena1(){
         printf("Opção inválida. Tente novamente.\n");
         cena1();
     }}
+//Encontro com o troll
 void Caminho1(){
     int escolhacolher;
     int escolhaTroll;
@@ -269,6 +270,7 @@ void Caminho1(){
     }
 {system("cls");}
 }
+//Indo para ponte
 void caminho2(){
     int escolhaPantano;
     printf("Troll: Voce ja ouviu falar sobre o pantano de chocolate? Então, eu recomendaria ir por lá.\n");
@@ -285,6 +287,7 @@ void caminho2(){
             caminho2();
         }
     }
+//caminho pantano;
 void pantano (){
     if (escolhaPantano==1){
         printf("Ao atravessar a ponte, %s encontra um vale escuro todo preenchido com árvores de cacau: o Pântano de Chocolate!!\n", nomePersonagem(personagemEscolhido));
@@ -309,9 +312,37 @@ void pantano (){
 
     }
 }
+//caminho floresta
 void floresta()
 {
     if (escolhaPantano==3){
         printf("Narrador: %s consegue atravessar o pantano e entra na floresta encantada, onde encontra criaturas mágicas e desafios inesperados.\n", nomePersonagem(personagemEscolhido));
+        printf("Entretanto, ao adentrar na floresta, %s se depara com umas arvores altas que bloqueiam sua visão do sol, tornando aquele ambiente que antes parecia normal\n naquele momento estava de dificil orientação. Então %s, consegue visualizar apenas 2 caminhos, uma trilha escura e um caminho ilumidado. Qual ele deve seguir?\n", nomePersonagem(personagemEscolhido));
+        int escolhaFloresta;
+        printf("1- Seguir pela trilha escura, enfrentando os perigos que lá habitam.\n2- Seguir pelo caminho iluminado, mesmo que isso signifique uma jornada mais longa e perigosa.\nEscolha: ");
+        scanf("%d", &escolhaFloresta);
+        if (escolhaFloresta == 1) {
+            printf ("%s decide enfrentar os perigos da trilha escura, determinado a encontrar o Cupcake Real.\n", nomePersonagem(personagemEscolhido));
+            printf("Ao seguir pela trilha escura, %s se depara com um grupo de goblins famintos que bloqueiam seu caminho.\n", nomePersonagem(personagemEscolhido));
+            printf("O que %s faz?\n", nomePersonagem(personagemEscolhido));
+            int escolhaGoblins;
+            printf("1-Usar a colher da deusa sugar para afastar os globins. \n2-Tentar utilizar a colher refletindo do sol para cegar os goblins e fugir.\nEscolha: ");
+            scanf("%d", &escolhaGoblins);
+            if (escolhaGoblins==1){
+                printf("Usando a colher da deusa sugar, %s consegue afastar os goblins e atravessa a trilha escura em segurança.\n", nomePersonagem(personagemEscolhido));
+            }else if (escolhaGoblins==2)
+            {
+             printf("Consegue cegar os globins e acaba fugindo deles, entretanto, %s cai em uma passagem secreta que leva ao vilarejo.\n", nomePersonagem(personagemEscolhido));   
+            } else{
+                printf("Opção inválida. Tente novamente.\n");
+                floresta(); }
+            }
+         else if (escolhaFloresta == 2) {
+            printf("Ao seguir pelo caminho iluminado, %s consegue visualizar ", nomePersonagem(personagemEscolhido));
+            printf("Encontra uma esfinge que bloqueia seu caminho.\nEla propõe um enigma:\n");
+            printf("");
+
+        }
+        
+        
     }
-}
