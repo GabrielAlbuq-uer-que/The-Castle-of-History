@@ -88,7 +88,7 @@ int main(void) {
 //função de interface inicial
     void interfaceini(){
     int PLAY=0;
-    printf("INTRUÇÕES DO JOGO:\n - O JOGO É DE AVENTURA E ESCOLHAS\n - ESCOLHA APENAS NÚMEROS INTEIROS, VARIADOS DE 1 ATÉ 5.\n - DIVIRTA-SE!\nPRESSIONE 1 PARA JOGAR OU 2 PARA SAIR:\n");
+    printf("INTRUÇÕES DO JOGO:\n - O JOGO É DE AVENTURA E ESCOLHAS\n - ESCOLHA APENAS NÚMEROS INTEIROS, VARIADOS DE 1 ATÉ 5.\n - DIVIRTA-SE!\nPresentes sempre são bem-vindos!\nPRESSIONE 1 PARA JOGAR OU 2 PARA SAIR:\n");
     scanf("%d", &PLAY);
     if (PLAY == 1){
         printf("INICIANDO JOGO...\n");
@@ -118,7 +118,7 @@ int main(void) {
     system("cls");
     system ("color 0F");
 }
-//Introdução da história
+//Introdução da história 
     void iniHistoria(int personagem){
     printf("=====SEJA BEM-VINDO AO CASTELO DA HISTORIA!=====\nEra uma vez, em ByteLand, um reino onde a magia se mistura com doces encantados que sao mais valiosos que ouro.\n Acada ano, o povo aguarda ansiosamente o Grande Festival do Bolo Real, o evento mais delicioso e festivo do calendario.\n É nesse dia que a bondosa Princesa Pixel escolhe o bolo mais magnifico do reino para dividir com todos, espalhando alegria eesperança em seu vilarejo.  \nMas este ano, algo terrível aconteceu…\n");
     printf("\nNa calada da noite, o Bolo Supremo, a joia da festa, desapareceu      misteriosamente!\n As cozinhas reais estao em alvoroco, o povo esta em choque e a honra da princesa esta em risco.\n");
@@ -138,7 +138,7 @@ int main(void) {
     }
     system("cls");
 }
-//função de escolha de personagem
+//função de escolha de personagem 1 - decisão
     int personagemMenu(){
     int escolha;
     printf("Voce iniciara sua aventura e pode escolher entre tres personagens:\n");
@@ -166,15 +166,15 @@ int main(void) {
 }
 
         void personagemCa() {
-    printf("Você escolheu o CORAJOSO CAVALEIRO JELLY BEANS!\n");
+    printf("Você escolheu o %s!\n", nomePersonagem(2));
     Sleep(2000);
 }
 
         void personagemCo() {
-    printf("Você escolheu o HONESTO CAMPONÊS CANDY DROPS!\n");
+    printf("Você escolheu o %s!\n", nomePersonagem(3));
     Sleep(2000);
 }
-//cena1 
+//cena1 -1decisao(3 no total)
 void cena1(){
     if(personagemEscolhido==1){
         printf("Narrador: O mercenário Tutti Frutti sai da Taberna em direção ao castelo para ouvir o que o rei tem de tão urgente para anunciar.\n");  
@@ -229,7 +229,7 @@ void cena1(){
         printf("Opção inválida. Tente novamente.\n");
         cena1();
     }}
-//Encontro com o troll
+//Encontro com o troll 1decisão
 void Caminho1(){
     int escolhacolher;
     int escolhaTroll;
@@ -244,7 +244,7 @@ void Caminho1(){
     } else if (escolhacolher == 2) {
         printf("O personagem decide não pegar a colher e continua seu caminho.\n");
     }
-    //Ponte do troll
+    //Ponte do troll - 1decisão
     printf("Narrador: a colher é uma parte essencial da jornada de %s. Com ela é possível derrotar os monstros comestíveis.\n", nomePersonagem(personagemEscolhido));
     printf("Ao chegar na ponte, %s encontra um troll que bloqueia a passagem.\n", nomePersonagem(personagemEscolhido));
     printf("O troll está faminto, entretando, existe uma opção, voce se esconde.\n");
@@ -255,6 +255,8 @@ void Caminho1(){
     );
     if (escolhaTroll == 1 && escolhacolher == 1) {
         printf("Usando a colher, tenta lutar, o Troll se irrita e %s nao consegue derrotar o troll e nao atravessa a ponte em segurança.\n", nomePersonagem(personagemEscolhido));
+        printf("Game Over\n");
+        exit(0);
     } else if (escolhaTroll == 2 && escolhacolher == 2) {
         printf("%s se esconde habilmente, mas é notado pelo troll, que diz:\nTroll:\n", nomePersonagem(personagemEscolhido));
         printf("Troll: Olá, viajante! Eu sou o grande Oreo, o guardião desta ponte. Se você deseja atravessá-la, irei lhe ajudar.\n");
@@ -265,7 +267,7 @@ void Caminho1(){
     }
 {system("cls");}
 }
-//Indo para ponte
+//Indo para pantano - 1decisao
 void caminho2(){
     int escolhaPantano;
     printf("Troll: Voce ja ouviu falar sobre o pantano de chocolate? Então, eu recomendaria ir por lá.\n");
@@ -282,7 +284,7 @@ void caminho2(){
             caminho2();
         }
     }
-//caminho pantano;
+//caminho pantano; - 1decisao
 void pantano (){
     if (escolhaPantano==1){
         printf("Ao atravessar a ponte, %s encontra um vale escuro todo preenchido com árvores de cacau: o Pântano de Chocolate!!\n", nomePersonagem(personagemEscolhido));
@@ -307,12 +309,12 @@ void pantano (){
 
     }
 }
-//caminho floresta
+//caminho floresta - 3 decisao
 void floresta(){
 
     if (escolhaPantano==3){
         printf("Narrador: %s consegue atravessar o pantano e entra na floresta encantada, onde encontra criaturas mágicas e desafios inesperados.\n", nomePersonagem(personagemEscolhido));
-        printf("Entretanto, ao adentrar na floresta, %s se depara com umas arvores altas que bloqueiam sua visão do sol, tornando aquele ambiente que antes parecia normal\n naquele momento estava de dificil orientação. Então %s, consegue visualizar apenas 2 caminhos, uma trilha escura e um caminho ilumidado. Qual ele deve seguir?\n", nomePersonagem(personagemEscolhido));
+        printf("Entretanto, ao adentrar na floresta, %s se depara com umas arvores altas que bloqueiam sua visão do sol, tornando aquele ambiente que antes parecia normal\n naquele momento estava de dificil orientação. Então %s, consegue visualizar apenas 2 caminhos, uma trilha escura e um caminho ilumidado. Qual ele deve seguir?\n", nomePersonagem(personagemEscolhido), nomePersonagem(personagemEscolhido));
         int escolhaFloresta;
         printf("1- Seguir pela trilha escura, enfrentando os perigos que lá habitam.\n2- Seguir pelo caminho iluminado, mesmo que isso signifique uma jornada mais longa e perigosa.\nEscolha: ");
         scanf("%d", &escolhaFloresta);
