@@ -247,6 +247,7 @@ void Caminho1(){
     } else if (escolhacolher == 2) {
         printf("O personagem decide não pegar a colher e continua seu caminho.\n");
     }
+
     //Ponte do troll - 1decisão
     printf("Narrador: a colher é uma parte essencial da jornada de %s. Com ela é possível derrotar os monstros comestíveis.\n", nomePersonagem(personagemEscolhido));
     printf("Ao chegar na ponte, %s encontra um troll que bloqueia a passagem.\n", nomePersonagem(personagemEscolhido));
@@ -431,4 +432,81 @@ void vilarejo(){
         reiniciarV();
     }
 
+}
+
+//A Masmorra
+void masmorra() {
+int escolha = 0;
+
+printf("\nNarrador: %s é capturado pelos guardas do arqui-inimigo do Rei, Amendobobo, "
+"e levado como prisioneiro para a sombria masmorra localizada no porão de sua torre.\n",
+nomePersonagem(personagemEscolhido));
+printf("Dentro da masmorra, uma câmara fria e de tijolos cinzas mal colocados, %s escuta barulhos de mastigação.\n",
+nomePersonagem(personagemEscolhido));
+printf("É um guarda de Amendobobo devorando um brownie.\n");
+printf("Nesse momento, %s decide que é hora de agir...\n", nomePersonagem(personagemEscolhido));
+
+escolha = escolher(
+"1- Tentar abrir um buraco na parede com sua colher.\n"
+"2- Tentar conversar com o guarda.\nEscolha: ",
+2
+);
+
+if (escolha == 0) {
+printf("Insira uma opção válida.\n");
+masmorra();
+}
+else if (((personagemEscolhido == 1 || personagemEscolhido == 2) && escolha == 2) ||
+(personagemEscolhido == 3 && escolha == 1)) {
+
+printf("\nGuarda: Que queres? Não vês que estou devorando esse delicioso brownie?");
+printf("\n%s: Ajude-me. Preciso recuperar o bolo que foi roubado por Amendobobo. "
+"Sem ele, coisas horríveis acontecerão no reino.",
+nomePersonagem(personagemEscolhido));
+printf("\nGuarda: Tenho asco àquele verme. E como amo todos os tipos de bolo, "
+"estarei lhe contando o que sei. Amendobobo está a semana inteira recluso no último andar... e ele tem visita.");
+printf("\n%s: Solte-me para que eu possa ir confrontá-lo.", nomePersonagem(personagemEscolhido));
+
+encontroPrincesa();
+
+} else {
+printf("\nGuarda: Que queres? Não vês que estou devorando esse delicioso brownie?");
+printf("\n%s: Ajude-me. Preciso recuperar o bolo que foi roubado por Amendobobo. "
+"Sem ele, coisas horríveis acontecerão no reino.",
+nomePersonagem(personagemEscolhido));
+printf("\nGuarda: Eu conheço você!!! És Tutti Frutti, o salafrário que roubou uma caixa de brownies dourados de minha casa ano passado.");
+printf("\nNarrador: Para a infelicidade de Tutti Frutti, sua vida de crime acabou o prejudicando "
+"e o guarda, que tinha sido uma de suas vítimas, obteve sua vingança.");
+}
+
+escolha = 0;
+}
+
+//A Torre do Vilão
+void torreVilao() {
+int escolha = 0;
+
+printf("\nNarrador: Cansado da jornada, %s se depara com a entrada da imponente torre de Amendobobo.\n",
+nomePersonagem(personagemEscolhido));
+printf("A construção é sombria, feita de pedras negras e envolta por uma aura de magia maligna. "
+"Ele consegue visualizar uma grande porta principal e uma janela a uma altura cuja queda seria fatal. "
+"Ele deve decidir como adentrar a torre.\n");
+
+escolha = escolher(
+"Como deseja entrar na torre?\n"
+"1- Entrar pela porta principal.\n"
+"2- Escalar e entrar pela janela.\nEscolha: ",
+2
+);
+
+if (escolha == 1) {
+masmorra();
+} else if (escolha == 2) {
+encontroPrincesa();
+} else {
+printf("Insira uma opção válida.\n");
+torreVilao();
+}
+
+escolha = 0;
 }
