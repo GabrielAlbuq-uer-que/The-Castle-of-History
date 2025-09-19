@@ -57,6 +57,8 @@ const char* nomePersonagem(int personagem) {
 
 //funçãoMAIN
 int main(void) {
+    system("chcp 65001");
+    system("cls");
     setlocale(LC_ALL, "pt_BR.UTF-8");
     introducao();
     interfaceini();
@@ -74,15 +76,12 @@ int main(void) {
 //função de introdução
     void introducao(){
     system("echo off");
-    system ("color 0A");
     printf("////////////////////////////////\n");
     printf("/////// SEJA BEM-VINDO /////////\n");
-    system ("color 0B");
     printf("//////      AO        //////////\n");    
     printf("////// CASTLE OF HISTORY //////\n");    
-    printf("//////////////////////////////\n");
+    printf("/////////CANDY/////////////////\n");
     Sleep(2000);
-    system ("color 0F");
     system("cls");
 }  
 //função de interface inicial
