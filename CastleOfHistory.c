@@ -69,11 +69,6 @@ int main(void) {
     caminho2();
     pantano();
     floresta();
-   // iniJogo();
-  //  iniciarJogo();
-   // fase1();
-  //  fase2();
-  //  fimdeJogo();
     return 0;
 }
 //função de introdução
@@ -313,8 +308,8 @@ void pantano (){
     }
 }
 //caminho floresta
-void floresta()
-{
+void floresta(){
+
     if (escolhaPantano==3){
         printf("Narrador: %s consegue atravessar o pantano e entra na floresta encantada, onde encontra criaturas mágicas e desafios inesperados.\n", nomePersonagem(personagemEscolhido));
         printf("Entretanto, ao adentrar na floresta, %s se depara com umas arvores altas que bloqueiam sua visão do sol, tornando aquele ambiente que antes parecia normal\n naquele momento estava de dificil orientação. Então %s, consegue visualizar apenas 2 caminhos, uma trilha escura e um caminho ilumidado. Qual ele deve seguir?\n", nomePersonagem(personagemEscolhido));
@@ -340,9 +335,22 @@ void floresta()
          else if (escolhaFloresta == 2) {
             printf("Ao seguir pelo caminho iluminado, %s consegue visualizar ", nomePersonagem(personagemEscolhido));
             printf("Encontra uma esfinge que bloqueia seu caminho.\nEla propõe um enigma:\n");
-            printf("");
+            printf("Doce, verde e tem uva dentro. Qual o nome desse doce?\n");
+            int respostaEsfinge;
+            printf("1- Uvinha\n2- Brigadeiro\n3- Casadinho\nEscolha: ");
+            scanf("%d", &respostaEsfinge);
+            if (respostaEsfinge==1){
+                printf("Esfinge: Correto! Voce é digno de atravessar meu caminho. Boa sorte em sua jornada!\n");
+                printf("Narrador: Felizmente, %s consegue atravessar o caminho iluminado e segue em frente em sua jornada.\n", nomePersonagem(personagemEscolhido));
+            }
+            else{
+                printf("Esfinge: Errado! Voce nao é digno de atravessar meu caminho. Volte quando estiver preparado!\n");
+                printf("Narrador: Infelizmente, %s nao consegue atravessar o caminho iluminado e pensa mais um pouco.\n", nomePersonagem(personagemEscolhido));
+                floresta();
+            }
 
         }
         
         
     }
+}
