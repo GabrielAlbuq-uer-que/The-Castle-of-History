@@ -9,8 +9,8 @@ void trocaDeTela();
 void iniHistoria(int personagem);
 //cenas e caminhos;
 void cena1();
-int personagemEscolhido;
-int escolha1;
+    int personagemEscolhido;
+    int escolha1;
 int escolher1(const char *pergunta, int opcoes);
 void Caminho1();
 int escolhercolher(const char *pergunta, int opcoes);
@@ -18,7 +18,10 @@ int escolhatroll(const char *pergunta, int opcoes);
 void caminho2();
     int escolhaPantano;
 void pantano();
+void reiniciarP(int cena);
 void floresta();
+void reiniciarF(int cena);
+void vilarejo();
 //personagens;
 int personagemMenu();
 void personagemM();
@@ -70,6 +73,7 @@ int main(void) {
     Caminho1();
     caminho2();
     pantano();
+        
     floresta();
     return 0;
 }
@@ -302,13 +306,43 @@ void pantano (){
         }
         else{
             printf("Mr. Pringlles: Errado! Voce nao é digno de atravessar meu pantano. Volte quando estiver preparado!\n");
-            printf("Narrador: Infelizmente, %s nao consegue atravessar o pantano e pensa mais um pouco.\n", nomePersonagem(personagemEscolhido));
-            pantano();
+            printf("Narrador: Infelizmente, %s nao consegue atravessar!\n", nomePersonagem(personagemEscolhido));
+            void reiniciarP(int cena);
+}
         }
 
-    }
 }
 //caminho floresta - 3 decisao
+void reiniciarP(int cena){
+    system("cls");
+    printf("Deseja reiniciar o pantano? (1-Sim / 2-Não): ");
+    int escolhaReiniciar;
+    scanf("%d", &escolhaReiniciar);
+    if (escolhaReiniciar == 1) {
+        pantano();
+    } else if (escolhaReiniciar == 2) {
+        printf("Encerrando o jogo. Obrigado por jogar!\n");
+        exit(0);
+    } else {
+        printf("Opção inválida. Tente novamente.\n");
+        reiniciarP(cena);
+    }
+}
+void reiniciarF(int cena){
+    system("cls");
+    printf("Deseja reiniciar a floresta? (1-Sim / 2-Não): ");
+    int escolhaReiniciar;
+    scanf("%d", &escolhaReiniciar);
+    if (escolhaReiniciar == 1) {
+        floresta();
+    } else if (escolhaReiniciar == 2) {
+        printf("Encerrando o jogo. Obrigado por jogar!\n");
+        exit(0);
+    } else {
+        printf("Opção inválida. Tente novamente.\n");
+        reiniciarF(cena);
+    }
+}
 void floresta(){
 
     if (escolhaPantano==3){
@@ -347,11 +381,54 @@ void floresta(){
             else{
                 printf("Esfinge: Errado! Voce nao é digno de atravessar meu caminho. Volte quando estiver preparado!\n");
                 printf("Narrador: Infelizmente, %s nao consegue atravessar o caminho iluminado e pensa mais um pouco.\n", nomePersonagem(personagemEscolhido));
-                floresta();
+                void reiniciarF(int cena);
             }
 
         }
         
         
     }
+    void trocaDeTela();
+}
+void reiniciarV(){
+    system("cls");
+    printf("Deseja reiniciar o vilarejo? (1-Sim / 2-Não): ");
+    int escolhaReiniciar;
+    scanf("%d", &escolhaReiniciar);
+    if (escolhaReiniciar == 1) {
+        vilarejo();
+    } else if (escolhaReiniciar == 2) {
+        printf("Encerrando o jogo. Obrigado por jogar!\n");
+        exit(0);
+    } else {
+        printf("Opção inválida. Tente novamente.\n");
+        reiniciarV();
+    }
+}
+void vilarejo(){
+    printf("=========================\n");
+    printf("=== CHEGADA AO VILAREJO ===\n");
+    printf("=========================\n");
+    printf("%s segue seu caminho em direção ao vilarejo, depois de uma longa caminhada, finalmente avista o portão principal de CandyVillage.\n", nomePersonagem(personagemEscolhido));
+    printf("Narrador: %s chega ao vilarejo, onde encontra os habitantes assustados e desesperados.\n", nomePersonagem(personagemEscolhido));
+    printf("Mercador Sr. Springles: Por favor, você deve nos ajudar! O Cupcake Real foi roubado e sem ele, o festival não pode acontecer. Se você conseguir recuperá-lo, será recompensado generosamente!\n");
+    printf("%s: Tem alguma pista de quem poderia ter roubado o Cupcake Real?\n", nomePersonagem(personagemEscolhido));
+    printf("Mercador Sr. Springles: Bem, ainda não escutei nada por aqui, caso escute eu lhe aviso.\n");
+    printf("Você avista um grupo de pessoas e um senhor idoso sentado em um banco um tanto assustado, você se aproxima e o que faz?\n");
+    int escolhaVilarejo;
+    printf("1- Pergunta sobre o roubo do Cupcake Real.\n2- Ignora e continua a olhar ao redor.\nEscolha: ");
+    scanf("%d", &escolhaVilarejo);
+    if (escolhaVilarejo==1){
+        printf("Você se aproxima do senhor idoso e pergunta sobre o roubo do Cupcake Real.\n");
+        printf("Senhor Idoso: Ah, sim! Eu vi algo estranho na noite passada. Havia uma figura sombria perto de uma torre abandonada no extremo sul da vila, parecia estar procurando algo...\n");
+        printf("%s: Obrigado pela informação, senhor. Isso pode ser útil.\n", nomePersonagem(personagemEscolhido));
+    } else if (escolhaVilarejo==2){
+        printf("%s decide não perguntar nada e continua a olhar ao redor, mas sente que poderia ter perdido uma oportunidade de obter informações valiosas.\n", nomePersonagem(personagemEscolhido));
+        reiniciarV();
+    } else {
+        printf("Opção inválida. Tente novamente.\n");
+        vilarejo();
+        reiniciarV();
+    }
+
 }
