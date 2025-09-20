@@ -2,6 +2,7 @@
 Jogo de RPG em C, com o intuito de utilizar parametros de decisão para uma jogabilidade simples e didática.
 Utilizamos de estruras simples de decisão, para incorpação de metodologias introdutórias na programação, como decisões por if e else, switch case e while. 
 **COMO JOGAR:**
+
 -Necessário ter algum executavel de C instalado.
 
 -Utilize as teclas de 1 a 5 do teclado, caso necessário.
