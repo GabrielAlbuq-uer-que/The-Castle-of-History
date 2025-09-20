@@ -31,6 +31,8 @@ void floresta();
 void reiniciarF();
 void vilarejo();
 void reiniciarV();
+void forteleza();
+void reiniciarFo();
 
 // Função principal
 int main(void) {
@@ -50,6 +52,7 @@ int main(void) {
     pantano();
     floresta();
     vilarejo();
+    forteleza();
     
     return 0;
 }
@@ -519,5 +522,45 @@ void reiniciarV() {
         printf("Opção inválida.\n");
         Sleep(1000);
         reiniciarV();
+    }
+}
+void forteleza(){
+    system("cls");
+    printf("======== FORTELEZA ABANDONADA ========\n\n");
+    printf("Narrador: %s segue em direção à fortaleza. Indo pelo caminho mais rápido ele é obrigado a passar por uma ponte de madeira que atravessa um precipício, sua estrutura é precária e instável.", nomePersonagem(personagemEscolhido));
+    printf("O que %s faz?\n", nomePersonagem(personagemEscolhido));
+    int escolhaPonte = escolher(
+        "1- Atravessa a ponte com cuidado\n2- Procura outro caminho\nEscolha: ",
+        2
+    );
+    if (escolhaPonte == 1) {
+        printf ("%s ao atravessar a ponte verifica que a estrutura é realmente frágil, mas consegue atravessar com sucesso.\n", nomePersonagem(personagemEscolhido));
+        printf ("Ao adentrar a Forteleza, %s se depara com um cenário sombrio e assustador.\n", nomePersonagem(personagemEscolhido));
+    } else if (escolhaPonte == 2) {
+        printf ("%s ao procurar outro caminho, acaba se perdendo na floresta e não consegue encontrar a fortaleza.\n", nomePersonagem(personagemEscolhido));
+        printf ("Infelizmente, %s nao consegue chegar até a fortaleza e o jogo termina aqui.\n", nomePersonagem(personagemEscolhido));
+        reiniciarFo();
+        return;
+    } else {
+        printf("Ops, Tente novamente, quem sabe outros números?\n");
+        reiniciarFo();
+        return;
+    }
+}
+void reiniciarFo(){
+    system("cls");
+    printf("Deseja reiniciar a fortaleza? (1-Sim / 2-Não): ");
+    int escolhaReiniciar;
+    scanf("%d", &escolhaReiniciar);
+    
+    if (escolhaReiniciar == 1) {
+        forteleza();
+    } else if (escolhaReiniciar == 2) {
+        printf("Encerrando o jogo. Obrigado por jogar!\n");
+        exit(0);
+    } else {
+        printf("Opção inválida.\n");
+        Sleep(1000);
+        reiniciarFo();
     }
 }
