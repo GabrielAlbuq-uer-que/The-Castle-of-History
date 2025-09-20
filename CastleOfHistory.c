@@ -6,9 +6,9 @@
 int personagemEscolhido;
 int escolha1;
 int escolhaPantano = 0;
-int temColher = 0; // 0 = não tem, 1 = tem
+int temColher = 0;
 
-// Protótipos de funções
+//funções
 void introducao();
 void interfaceini();
 void trocaDeTela();
@@ -53,11 +53,10 @@ int main(void) {
     floresta();
     vilarejo();
     forteleza();
-    
     return 0;
 }
 
-// Implementação das funções
+//funções
 void introducao() {
     system("echo off");
     printf("////////////////////////////////\n");
