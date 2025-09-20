@@ -538,14 +538,66 @@ void forteleza(){
         printf ("Ao adentrar a Forteleza, %s se depara com um cenário sombrio e assustador.\n", nomePersonagem(personagemEscolhido));
     } else if (escolhaPonte == 2) {
         printf ("%s ao procurar outro caminho, acaba se perdendo na floresta e não consegue encontrar a fortaleza.\n", nomePersonagem(personagemEscolhido));
-        printf ("Infelizmente, %s nao consegue chegar até a fortaleza e o jogo termina aqui.\n", nomePersonagem(personagemEscolhido));
-        reiniciarFo();
-        return;
+        printf ("Infelizmente, %s nao consegue chegar até a fortaleza e o jogo termina aqui, o Rei fica decepcionado e pede que você seja expulso do reino!\n", nomePersonagem(personagemEscolhido));
+        forteleza();
     } else {
         printf("Ops, Tente novamente, quem sabe outros números?\n");
         reiniciarFo();
         return;
     }
+    printf("Dentro da fortaleza, você encontra dois caminhos:\n");
+    int escolhaCaminho = escolher(
+        "1- Seguir pelo corredor escuro à esquerda que dá acesso à masmorra\n2- Subir as escadas em espiral à direita que da acesso a torre.\nEscolha: ",
+        2
+    );
+    if (escolhaCaminho == 1) {
+        printf("%s desce as escadas que levam à masmorra, o ambiente é úmido e sombrio, com paredes de pedra cobertas de musgo e teias de aranha.\n", nomePersonagem(personagemEscolhido));
+        printf("De repente, uma figura sombria emerge das sombras: é o Chefe da guarda real, o Mr. Beijinho!\nEle está furioso por não conseguir sair das masmorras, então ele lhe pede que encontre o ladrão na torre.\n");
+    } else if (escolhaCaminho == 2) {
+        printf("%s sobe as escadas em espiral que levam à torre, o ambiente é frio e ventoso, com janelas quebradas que deixam entrar a luz da lua.\n", nomePersonagem(personagemEscolhido));
+        printf("De repente, uma figura sombria emerge das sombras: é o ladrão do Cupcake Real, o Sr. Amendobobo!\nEle está furioso por ter sido descoberto, então ele lhe desafia para um duelo de doces!\n");
+        printf("Ele então lhe faz uma prosposta:\n)");
+        printf("Sr.Amendobobo: Pense na possibilidade de termos um acordo, nós poderiamos dividir o poder do Cupcake Real, o que acha?\n");
+        int escolhaAcordo = escolher(
+            "1- Aceitar a proposta e dividir o poder do Cupcake Real\n2- Recusar a proposta e lutar pelo Cupcake Real\n3-Tentar negociar.\nEscolha: ",
+            2
+        );
+        if (escolhaAcordo == 1) {
+            printf("%s aceita a proposta do Sr. Amendobobo e juntos eles governam o reino com muita maldade e crueldade com a população. Ocasionando em um golpe e você acaba morrendo!\n", nomePersonagem(personagemEscolhido));
+            printf("Parabéns! Você completou o jogo, sendo usurpado!\nGAME OVER!\n");
+            exit(0);
+        } else if (escolhaAcordo == 2) {
+            printf("%s recusa a proposta do Sr. Amendobobo e inicia uma batalha épica de doces!\n", nomePersonagem(personagemEscolhido));
+            printf("Usando a colher da deusa sugar, %s consegue derrotar o Sr. Amendobobo e recuperar o Cupcake Real!\n", nomePersonagem(personagemEscolhido));
+            printf("Parabéns! Você completou o jogo com um final heroico!\n");
+            exit(0);
+        } else if (escolhaAcordo == 3) {
+            printf("%s tenta negociar com o Sr. Amendobobo, mas ele não está interessado em ouvir!\n", nomePersonagem(personagemEscolhido));
+            printf("%s: Você sabe que nós poderiamos tentar melhorar a sua situação aqui, não é mesmo?\n", nomePersonagem(personagemEscolhido));
+            printf("Sr.Amendobobo: Eu não confio em você! Prepare-se para lutar!\n");
+            printf("NARRADOR:%s pensa rapidamente", nomePersonagem(personagemEscolhido));
+            printf("Existe uma maneira de derrotar o Sr. Amendobobo sem lutar, usando a colher da deusa sugar para refletir a luz do sol em seus olhos!\n");
+            printf("O que %s faz?\n", nomePersonagem(personagemEscolhido));
+            int escolhaNegociar = escolher(
+                "1- Entender os motivos do Sr. Amendobo\n2- Lutar contra o Sr. Amendobobo\nEscolha: ",
+                2
+            );
+            if (escolhaNegociar == 1) {
+                printf("%s tenta entender os motivos do Sr. Amendobobo e descobre que ele roubou o Cupcake Real para chamar a atenção do rei e conseguir um emprego na cozinha real.\n", nomePersonagem(personagemEscolhido));{
+                printf("Sr.Amendobobo: Eu só queria uma chance de mostrar meu talento culinário!\n");
+                printf("%s: Eu posso ajudar você a conseguir um emprego na cozinha real, mas você precisa devolver o Cupcake Real.\n", nomePersonagem(personagemEscolhido));
+                printf("Sr.Amendobobo: Tudo bem, eu devolvo o Cupcake Real!\n");
+                printf("Parabéns! Você completou o jogo com um final pacífico!\n");
+            }
+            
+            } else if (escolhaNegociar == 2) {
+                printf("%s recusa a proposta do Sr. Amendobobo e inicia uma batalha épica de doces!\n", nomePersonagem(personagemEscolhido));
+                printf("Usando a colher da deusa sugar, %s consegue derrotar o Sr. Amendobobo e recuperar o Cupcake Real!\n", nomePersonagem(personagemEscolhido));
+                printf("Parabéns! Você completou o jogo com um final heroico!\n");
+            }
+        }
+        exit(0);}
+    
 }
 void reiniciarFo(){
     system("cls");
