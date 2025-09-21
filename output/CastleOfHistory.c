@@ -52,7 +52,7 @@ int main(void) {
     pantano();
     floresta();
     vilarejo();
-    forteleza();
+    fortaleza();
     return 0;
 }
 
@@ -523,9 +523,9 @@ void reiniciarV() {
         reiniciarV();
     }
 }
-void forteleza() {
+void fortaleza() {
     system("cls");
-    printf("======== FORTELEZA ABANDONADA ========\n\n");
+    printf("======== FORTALEZA ABANDONADA ========\n\n");
     printf("Narrador: %s segue em direção à fortaleza. Indo pelo caminho mais rápido ele é obrigado a passar por uma ponte de madeira que atravessa um precipício, sua estrutura é precária e instável.\n", nomePersonagem(personagemEscolhido));
     printf("O que %s faz?\n", nomePersonagem(personagemEscolhido));
     
@@ -666,7 +666,7 @@ void reiniciarFo() {
     if (escolhaReiniciar == 1) {
         printf("Reiniciando a fortaleza...\n");
         Sleep(2000);
-        forteleza();
+        fortaleza();
     } else if (escolhaReiniciar == 2) {
         printf("Encerrando o jogo. Obrigado por jogar!\n");
         Sleep(2000);
