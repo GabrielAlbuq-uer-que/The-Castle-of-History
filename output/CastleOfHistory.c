@@ -104,7 +104,7 @@ void iniHistoria(int personagem) {
     printf("A cada ano, o povo aguarda ansiosamente o Grande Festival do Bolo Real, o evento mais delicioso e festivo do calendario.\n");
     printf("É nesse dia que a bondosa Princesa Pixel escolhe o bolo mais magnifico do reino para dividir com todos, espalhando alegria e esperança em seu vilarejo.\n");
     printf("Mas este ano, algo terrível aconteceu…\n\n");
-    printf("Na calada da noite, o Bolo Supremo, a joia da festa, desapareceu misteriosamente!\n");
+    printf("Na calada da noite, o Cupcake Real, a joia da festa, desapareceu misteriosamente!\n");
     printf("As cozinhas reais estao em alvoroco, o povo esta em choque e a honra da princesa esta em risco.\n");
     Sleep(15000);
     system("cls");
