@@ -277,12 +277,12 @@ void Caminho1() {
         if (temColher == 1) {
             printf("Usando a colher, %s tenta lutar, mas o troll é muito forte!\n", nomePersonagem(personagemEscolhido));
             printf("Game Over\nObrigado por jogar!");
-            sleep(4000);
+            Sleep(4000);
             exit(0);
         } else {
             printf("%s tenta lutar sem a colher e é facilmente derrotado!\n", nomePersonagem(personagemEscolhido));
             printf("Game Over\nObrigado por jogar!");
-            sleep(4000);
+            Sleep(4000);
             exit(0);
         }
     } else {
