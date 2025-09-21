@@ -31,7 +31,7 @@ void floresta();
 void reiniciarF();
 void vilarejo();
 void reiniciarV();
-void fortaleza();
+void forteleza();
 void reiniciarFo();
 
 // Função principal
@@ -52,7 +52,7 @@ int main(void) {
     pantano();
     floresta();
     vilarejo();
-    fortaleza();
+    forteleza();
     return 0;
 }
 
@@ -265,7 +265,7 @@ void Caminho1() {
     Sleep(2000);
     system("cls");
     
-    printf("Ao chegar na ponte, %s encontra um troll que bloqueia a passagem!\n", nomePersonagem(personagemEscolhido));
+    printf("Ao chegar na ponte,%s encontra um troll que bloqueia a passagem!\n", nomePersonagem(personagemEscolhido));
     printf("O troll está faminto! Você pode se esconder ou enfrentá-lo.\n\n");
     
     int escolhaTroll = escolhatroll(
@@ -523,9 +523,9 @@ void reiniciarV() {
         reiniciarV();
     }
 }
-void fortaleza() {
+void forteleza() {
     system("cls");
-    printf("======== FORTALEZA ABANDONADA ========\n\n");
+    printf("======== FORTELEZA ABANDONADA ========\n\n");
     printf("Narrador: %s segue em direção à fortaleza. Indo pelo caminho mais rápido ele é obrigado a passar por uma ponte de madeira que atravessa um precipício, sua estrutura é precária e instável.\n", nomePersonagem(personagemEscolhido));
     printf("O que %s faz?\n", nomePersonagem(personagemEscolhido));
     
@@ -557,7 +557,7 @@ void fortaleza() {
         printf("De repente, uma figura sombria emerge das sombras: é o Chefe da guarda real, o Mr. Beijinho!\n");
         printf("Ele está furioso por não conseguir sair das masmorras, então ele lhe pede que encontre o ladrão na torre.\n");
         
-        // Dar opção ao jogador ao invés de reiniciar automaticamente
+        
         int escolhaMasmorra = escolher(
             "1- Voltar para explorar a torre\n2- Tentar ajudar Mr. Beijinho\nEscolha: ",
             2
@@ -566,7 +566,7 @@ void fortaleza() {
         if (escolhaMasmorra == 1) {
             printf("Você decide voltar e explorar a torre...\n");
             Sleep(2000);
-            // Simular a escolha da torre
+            
             escolhaCaminho = 2;
         } else {
             printf("Mr. Beijinho: Obrigado pela ajuda! Tome esta dica - o ladrão tem medo de luz!\n");
@@ -587,7 +587,7 @@ void fortaleza() {
         
         int escolhaAcordo = escolher(
             "1- Aceitar a proposta e dividir o poder do Cupcake Real\n2- Recusar a proposta e lutar pelo Cupcake Real\n3- Tentar negociar\nEscolha: ",
-            3  // Corrigido para 3 opções
+            3  
         );
         
         if (escolhaAcordo == 1) {
@@ -655,7 +655,6 @@ void reiniciarFo() {
     
     int escolhaReiniciar;
     if (scanf("%d", &escolhaReiniciar) != 1) {
-        // Limpar buffer se input inválido
         while (getchar() != '\n');
         printf("Opção inválida. Digite 1 para Sim ou 2 para Não.\n");
         Sleep(2000);
@@ -666,7 +665,7 @@ void reiniciarFo() {
     if (escolhaReiniciar == 1) {
         printf("Reiniciando a fortaleza...\n");
         Sleep(2000);
-        fortaleza();
+        forteleza();
     } else if (escolhaReiniciar == 2) {
         printf("Encerrando o jogo. Obrigado por jogar!\n");
         Sleep(2000);
