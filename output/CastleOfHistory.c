@@ -31,7 +31,7 @@ void floresta();
 void reiniciarF();
 void vilarejo();
 void reiniciarV();
-void forteleza();
+void fortaleza();
 void reiniciarFo();
 
 // Função principal
