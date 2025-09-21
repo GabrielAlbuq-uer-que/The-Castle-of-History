@@ -63,7 +63,8 @@ void introducao() {
     printf("/////// SEJA BEM-VINDO /////////\n");
     printf("//////      AO        //////////\n");    
     printf("////// CASTLE OF HISTORY: //////\n");    
-    printf("//////   A CANDY TALE  //////////\n");
+    printf("//////   A CANDY TALE  /////////\n");
+    printf("////////////////////////////////\n");
     Sleep(3000);
     system("cls");
 }
@@ -100,7 +101,7 @@ void trocaDeTela() {
 
 void iniHistoria(int personagem) {
     printf("=====SEJA BEM-VINDO A CASTLE OF HISTORY!=====\n");
-    printf("Era uma vez, em ByteLand, um reino onde a magia se mistura com doces encantados que sao mais valiosos que ouro.\n");
+    printf("Era uma vez, ByteLand, um reino onde a magia se mistura com doces encantados que sao mais valiosos que ouro.\n");
     printf("A cada ano, o povo aguarda ansiosamente o Grande Festival do Bolo Real, o evento mais delicioso e festivo do calendario.\n");
     printf("É nesse dia que a bondosa Princesa Pixel escolhe o bolo mais magnifico do reino para dividir com todos, espalhando alegria e esperança em seu vilarejo.\n");
     printf("Mas este ano, algo terrível aconteceu…\n\n");
@@ -214,7 +215,7 @@ void cena1() {
     }
     
     printf("Rei: Aconteceu uma desgraça!! O Cupcake Real foi roubado. Sem ele não é possível acontecer o festival!\n");
-    printf("Àquele que encontrar o Cupcake será concedido a honra de se casar com a princesa!\n\n");
+    printf("Àquele que encontrar o Cupcake será concedido a honra de uma grande recompensa!\n\n");
     
     if(personagemEscolhido == 1) {
         escolha1 = escolher1(
@@ -305,7 +306,7 @@ void caminho2() {
     system("cls");
     printf("======== CAMINHO 2: A ESCOLHA ========\n\n");
 
-    printf("Narrador: Ao sair do Castelo, %s se depara com a presença de um curioso Troll. Ele parece ter algo a dizer.\n\n");
+    printf("Narrador: Após escapar da ponte, %s se depara com a presença de um pequeno e curioso Troll. Ele parece ter algo a dizer.\n\n", nomePersonagem(personagemEscolhido));
     printf("Troll: Você já ouviu falar sobre o pântano de chocolate? Recomendo ir por lá.\n");
     printf("Narrador: %s já ouvira falar do temível Pântano de Chocolate...\n\n", nomePersonagem(personagemEscolhido));
     
@@ -345,7 +346,7 @@ void pantano() {
         
         if (resposta == 1) {
             printf("Mr. Pringles: Correto! Você é digno de atravessar!\n");
-            printf("Você ganhou a habilidade de usar a colher da deusa sugar!\n");
+            printf("Você ganhou a habilidade de usar os poderes da colher da deusa Sugar!\n");
             escolhaPantano = 3;
             Sleep(4000);
             system("cls");
@@ -604,7 +605,7 @@ void forteleza() {
             printf("%s recusa a proposta do Sr. Amendobobo e inicia uma batalha épica de doces!\n", nomePersonagem(personagemEscolhido));
             
             if (temColher == 1) {
-                printf("Usando a colher da deusa sugar, %s consegue derrotar o Sr. Amendobobo e recuperar o Cupcake Real!\n", nomePersonagem(personagemEscolhido));
+                printf("Usando a colher da deusa Sugar, %s consegue derrotar o Sr. Amendobobo e recuperar o Cupcake Real!\n", nomePersonagem(personagemEscolhido));
                 printf("Parabéns! Você completou o jogo com um final heroico!\n");
             } else {
                 printf("Sem a colher da deusa, %s luta bravamente mas é derrotado pelo Sr. Amendobobo!\n", nomePersonagem(personagemEscolhido));
