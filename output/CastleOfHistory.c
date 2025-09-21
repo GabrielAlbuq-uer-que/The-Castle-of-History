@@ -62,9 +62,9 @@ void introducao() {
     printf("////////////////////////////////\n");
     printf("/////// SEJA BEM-VINDO /////////\n");
     printf("//////      AO        //////////\n");    
-    printf("////// CASTLE OF HISTORY //////\n");    
-    printf("/////////CANDY/////////////////\n");
-    Sleep(2000);
+    printf("////// CASTLE OF HISTORY: //////\n");    
+    printf("/////////A CANDY TALE/////////////////\n");
+    Sleep(5000);
     system("cls");
 }
 
@@ -75,16 +75,16 @@ void interfaceini() {
     
     if (PLAY == 1) {
         printf("INICIANDO JOGO...\n");
-        Sleep(1000);
+        Sleep(3000);
         system("cls");
     } else if (PLAY == 2) {
         printf("SAINDO...\n");
-        Sleep(2000);
+        Sleep(3000);
         system("cls");
         exit(0);
     } else {
         printf("OPÇÃO INVÁLIDA. TENTE NOVAMENTE.\n");
-        Sleep(2000);
+        Sleep(3000);
         system("cls");
         interfaceini();
     }
@@ -93,20 +93,20 @@ void interfaceini() {
 void trocaDeTela() {
     system("color 0A");
     printf("Carregando...\n");
-    Sleep(1000);
+    Sleep(5000);
     system("cls");
     system("color 0F");
 }
 
 void iniHistoria(int personagem) {
-    printf("=====SEJA BEM-VINDO AO CASTELO DA HISTORIA!=====\n");
+    printf("=====SEJA BEM-VINDO A CASTLE OF HISTORY!=====\n");
     printf("Era uma vez, em ByteLand, um reino onde a magia se mistura com doces encantados que sao mais valiosos que ouro.\n");
     printf("A cada ano, o povo aguarda ansiosamente o Grande Festival do Bolo Real, o evento mais delicioso e festivo do calendario.\n");
     printf("É nesse dia que a bondosa Princesa Pixel escolhe o bolo mais magnifico do reino para dividir com todos, espalhando alegria e esperança em seu vilarejo.\n");
     printf("Mas este ano, algo terrível aconteceu…\n\n");
     printf("Na calada da noite, o Bolo Supremo, a joia da festa, desapareceu misteriosamente!\n");
     printf("As cozinhas reais estao em alvoroco, o povo esta em choque e a honra da princesa esta em risco.\n");
-    Sleep(4000);
+    Sleep(15000);
     system("cls");
     
     switch(personagem) {
@@ -122,7 +122,7 @@ void iniHistoria(int personagem) {
         default:
             break;
     }
-    Sleep(2000);
+    Sleep(10000);
     system("cls");
 }
 
@@ -153,19 +153,19 @@ int personagemMenu() {
 
 void personagemM() {
     printf("Você escolheu o %s!\n", nomePersonagem(1));
-    Sleep(2000);
+    Sleep(5000);
     system("cls");
 }
 
 void personagemCa() {
     printf("Você escolheu o %s!\n", nomePersonagem(2));
-    Sleep(2000);
+    Sleep(5000);
     system("cls");
 }
 
 void personagemCo() {
     printf("Você escolheu o %s!\n", nomePersonagem(3));
-    Sleep(2000);
+    Sleep(5000);
     system("cls");
 }
 
@@ -238,7 +238,7 @@ void cena1() {
     } else {
         printf("Narrador: %s decide não se envolver, mas é contratado para a missão!\n", nomePersonagem(personagemEscolhido));
     }
-    Sleep(3000);
+    Sleep(10000);
     system("cls");
 }
 
@@ -262,10 +262,10 @@ void Caminho1() {
         temColher = 0;
     }
     
-    Sleep(2000);
+    Sleep(5000);
     system("cls");
     
-    printf("Ao chegar na ponte,%s encontra um troll que bloqueia a passagem!\n", nomePersonagem(personagemEscolhido));
+    printf("Ao chegar na ponte, %s encontra um troll que bloqueia a passagem!\n", nomePersonagem(personagemEscolhido));
     printf("O troll está faminto! Você pode se esconder ou enfrentá-lo.\n\n");
     
     int escolhaTroll = escolhatroll(
@@ -295,14 +295,15 @@ void Caminho1() {
         printf("Você conseguiu passar pela ponte!\n");
     }
     
-    Sleep(3000);
+    Sleep(7000);
     system("cls");
 }
 
 void caminho2() {
     system("cls");
     printf("======== CAMINHO 2: A ESCOLHA ========\n\n");
-    
+
+    printf("Narrador: Ao sair do Castelo, %s se depara com a presença de um curioso Troll. Ele parece ter algo a dizer.\n\n");
     printf("Troll: Você já ouviu falar sobre o pântano de chocolate? Recomendo ir por lá.\n");
     printf("Narrador: %s já ouvira falar do temível Pântano de Chocolate...\n\n", nomePersonagem(personagemEscolhido));
     
@@ -318,7 +319,7 @@ void caminho2() {
         escolhaPantano = 1;
     }
     
-    Sleep(2000);
+    Sleep(5000);
     system("cls");
 }
 
@@ -329,7 +330,7 @@ void pantano() {
     printf("Ao atravessar a ponte, %s encontra o Pântano de Chocolate!\n", nomePersonagem(personagemEscolhido));
     printf("%s: Que lugar bonito! Não parece assustador.\n\n", nomePersonagem(personagemEscolhido));
     
-    printf("Narrador: Mais à frente, uma casa feita de waffles! Dentro está Mr. Pringles!\n");
+    printf("Narrador: Mais à frente, uma casa feita de waffles! Dentro está Mr. Pringles, o tão temido ogro do Pântano!\nMas, olhando de perto, ele não parece tão temível assim. Porém, parece ter algo a dizer. O que será?\n");
     printf("Mr. Pringles: Para atravessar, resolva meu enigma!\n\n");
     
     int resposta;
@@ -344,7 +345,7 @@ void pantano() {
             printf("Mr. Pringles: Correto! Você é digno de atravessar!\n");
             printf("Você ganhou a habilidade de usar a colher da deusa sugar!\n");
             escolhaPantano = 3;
-            Sleep(3000);
+            Sleep(7000);
             system("cls");
             return;
         } else {
@@ -352,7 +353,7 @@ void pantano() {
             printf("Mr. Pringles: Errado! Tentativa %d de 3\n", tentativas);
             if (tentativas < 3) {
                 printf("Tente novamente...\n");
-                Sleep(1000);
+                Sleep(5000);
                 system("cls");
             }
         }
@@ -374,7 +375,7 @@ void reiniciarP() {
         exit(0);
     } else {
         printf("Opção inválida.\n");
-        Sleep(1000);
+        Sleep(3000);
         reiniciarP();
     }
 }
@@ -438,7 +439,7 @@ void floresta() {
     }
     
     printf("Você conseguiu atravessar a floresta!\n");
-    Sleep(3000);
+    Sleep(5000);
     system("cls");
 }
 
@@ -455,7 +456,7 @@ void reiniciarF() {
         exit(0);
     } else {
         printf("Opção inválida.\n");
-        Sleep(1000);
+        Sleep(3000);
         reiniciarF();
     }
 }
@@ -519,7 +520,7 @@ void reiniciarV() {
         exit(0);
     } else {
         printf("Opção inválida.\n");
-        Sleep(1000);
+        Sleep(3000);
         reiniciarV();
     }
 }
@@ -541,7 +542,7 @@ void forteleza() {
         printf("%s ao procurar outro caminho, acaba se perdendo na floresta e não consegue encontrar a fortaleza.\n", nomePersonagem(personagemEscolhido));
         printf("Infelizmente, %s nao consegue chegar até a fortaleza e o jogo termina aqui, o Rei fica decepcionado e pede que você seja expulso do reino!\n", nomePersonagem(personagemEscolhido));
         printf("\nGame Over!\n");
-        Sleep(3000);
+        Sleep(7000);
         reiniciarFo();
         return;
     }
@@ -565,15 +566,15 @@ void forteleza() {
         
         if (escolhaMasmorra == 1) {
             printf("Você decide voltar e explorar a torre...\n");
-            Sleep(2000);
+            Sleep(5000);
             
             escolhaCaminho = 2;
         } else {
             printf("Mr. Beijinho: Obrigado pela ajuda! Tome esta dica - o ladrão tem medo de luz!\n");
             printf("Você ganha uma informação valiosa!\n");
-            Sleep(3000);
+            Sleep(5000);
             printf("Agora voltando para explorar a torre...\n");
-            Sleep(2000);
+            Sleep(5000);
             escolhaCaminho = 2;
         }
     }
@@ -594,7 +595,7 @@ void forteleza() {
             printf("%s aceita a proposta do Sr. Amendobobo e juntos eles governam o reino com muita maldade e crueldade com a população.\n", nomePersonagem(personagemEscolhido));
             printf("Infelizmente, em um golpe de poder, você acaba sendo traído e morrendo!\n");
             printf("Parabéns! Você completou o jogo, mas foi usurpado!\nGAME OVER!\n");
-            Sleep(4000);
+            Sleep(15000);
             exit(0);
         } 
         else if (escolhaAcordo == 2) {
@@ -607,7 +608,7 @@ void forteleza() {
                 printf("Sem a colher da deusa, %s luta bravamente mas é derrotado pelo Sr. Amendobobo!\n", nomePersonagem(personagemEscolhido));
                 printf("Game Over - Você precisava da colher para vencer!\n");
             }
-            Sleep(4000);
+            Sleep(12000);
             exit(0);
         } 
         else if (escolhaAcordo == 3) {
@@ -643,7 +644,7 @@ void forteleza() {
                 printf("Sr.Amendobobo: Sério? Você faria isso por mim? Tome, aqui está o Cupcake Real!\n");
                 printf("Parabéns! Você resolveu o conflito pacificamente!\n");
             }
-            Sleep(4000);
+            Sleep(15000);
             exit(0);
         }
     }
@@ -657,22 +658,22 @@ void reiniciarFo() {
     if (scanf("%d", &escolhaReiniciar) != 1) {
         while (getchar() != '\n');
         printf("Opção inválida. Digite 1 para Sim ou 2 para Não.\n");
-        Sleep(2000);
+        Sleep(5000);
         reiniciarFo();
         return;
     }
     
     if (escolhaReiniciar == 1) {
         printf("Reiniciando a fortaleza...\n");
-        Sleep(2000);
+        Sleep(5000);
         forteleza();
     } else if (escolhaReiniciar == 2) {
         printf("Encerrando o jogo. Obrigado por jogar!\n");
-        Sleep(2000);
+        Sleep(5000);
         exit(0);
     } else {
         printf("Opção inválida. Digite 1 para Sim ou 2 para Não.\n");
-        Sleep(2000);
+        Sleep(5000);
         reiniciarFo();
     }
 }
